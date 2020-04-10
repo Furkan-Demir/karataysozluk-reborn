@@ -1,0 +1,48 @@
+{% extends "core.html" %}
+{% block title %}Giriş Yap{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-sm-12 col-md-6"><br>
+                                <div class="text-center">
+                                    <h1>Hemen Giriş Yap</h1>
+                                    {% if bildirim %}
+                                    <br> <b>{{bildirim}}</b>
+                                    {% endif %}
+                                 <br>   
+                                </div>
+
+                                <span class="clearfix"></span>
+                                <form action="/giris" method="POST">
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="far fa-user"></i></span>
+                                            </div>
+                                            <input type="text" class="form-control" name="nick"
+                                                placeholder="Kullanıcı Adı" required>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="fas fa-unlock-alt"></i></span>
+                                            </div>
+                                            <input class="form-control" placeholder="Şifre" name="password" type="password" required>
+                                        </div>
+                                    </div>
+                                    <div class="mt-4">
+                                        <button type="submit" class="btn btn-block btn-primary">Giriş</button>
+                                    </div>
+                                </form>
+                                <div class="d-block d-sm-flex justify-content-between align-items-center mt-4">
+                                    <span>
+                                        <small>Hesabınız Yok mu?</small>
+                                        <a href="/kayit" class="small font-weight-bold">Hemen Kayıt Ol!</a>
+                                    </span>
+                                    <div><a href="#!" class="small text-right">Şifremi unuttum</a></div>
+                                </div>
+                            </div>
+    </div>
+</div>
+{% endblock %}

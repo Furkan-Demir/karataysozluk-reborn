@@ -1,0 +1,133 @@
+
+<div class="container-fluid">
+
+  <div class="row">
+    <div class="col-3">
+      <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+        <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">Profil Bilgilerim</a>
+        <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">Şifre Değiştir</a>
+
+      </div>
+    </div>
+    <div class="col-9">
+      <div class="card">
+      <div class="tab-content" id="v-pills-tabContent">
+
+        <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+        <!-- Button Modal -->
+        <button type="button" class="btn btn-block btn-secondary mb-3" data-toggle="modal" data-target="#pp">Profil Fotoğrafı Değiştir</button>
+<button type="button" class="btn btn-block btn-secondary mb-3" data-toggle="modal" data-target="#bio">Bio Değiştir</button>
+<button type="button" class="btn btn-block btn-secondary mb-3" data-toggle="modal" data-target="#social">Sosyal Medya Hesaplarım</button>
+          <!-- Modal Content -->
+          <div class="modal fade" id="bio" tabindex="-1" role="dialog" aria-labelledby="bio"
+              aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered" role="document">
+                  <div class="modal-content">
+                      <div class="modal-header">
+                          <h6 class="modal-title" id="modal-title-default">Bio</h6> 
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">×</span>
+                          </button>
+                      </div>
+                      <div class="modal-body">
+          <div class="form-group">
+              <textarea type="text" placeholder="Default" class="form-control" row="5"></textarea>
+          </div>
+                      </div>
+                      <div class="modal-footer">
+                          <button type="button" class="btn btn-sm btn-secondary">Değiştir!</button>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <!-- End of Modal Content -->
+          <!-- Modal Content -->
+          <div class="modal fade" id="social" tabindex="-1" role="dialog" aria-labelledby="social"
+              aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered" role="document">
+                  <div class="modal-content">
+                      <div class="modal-header">
+                          <h6 class="modal-title" id="modal-title-default">Sosyal Medya Hesaplarım</h6> 
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">×</span>
+                          </button>
+                      </div>
+                      <div class="modal-body">
+          <div class="form-group">
+            <label for="socialinputface">Facebook</label>
+              <input type="text" id="socialinputface" placeholder="Default" class="form-control" />
+          </div>
+                    <div class="form-group">
+            <label for="socialinputtw">Twitter</label>
+              <input type="text" id="socialinputtw" placeholder="Default" class="form-control" />
+          </div>
+                              <div class="form-group">
+            <label for="socialinputinsta">Instagram</label>
+              <input type="text" id="socialinputinsta" placeholder="Default" class="form-control" />
+          </div>
+                      </div>
+                      <div class="modal-footer">
+                          <button type="button" class="btn btn-sm btn-secondary">Değiştir!</button>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <!-- End of Modal Content -->
+                    <!-- Modal Content -->
+          <div class="modal fade" id="pp" tabindex="-1" role="dialog" aria-labelledby="pp"
+              aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered" role="document">
+                  <div class="modal-content">
+                      <div class="modal-header">
+                          <h6 class="modal-title" id="modal-title-default">Bio</h6> 
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">×</span>
+                          </button>
+                      </div>
+                      <div class="modal-body">
+<div class="input-group mb-3">
+  <div class="custom-file">
+    <input type="file" class="custom-file-input" id="inputGroupFile02">
+    <label class="custom-file-label" for="inputGroupFile02" aria-describedby="inputGroupFileAddon02"></label>
+  </div>
+  <div class="input-group-append">
+    <span class="input-group-text" id="inputGroupFileAddon02">Yükle!</span>
+  </div>
+</div>
+                      </div>
+                      <div class="modal-footer">
+                          <button type="button" class="btn btn-sm btn-secondary">Değiştir!</button>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <!-- End of Modal Content -->
+      </div>
+
+        <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+                            <div class="form-group">
+            <label for="socialinputinsta">Eski Şifre</label>
+              <input type="text" id="socialinputinsta" placeholder="Default" class="form-control" />
+          </div>
+                                      <div class="form-group">
+            <label for="socialinputinsta">Yeni Şifre</label>
+              <input type="text" id="socialinputinsta" placeholder="Default" class="form-control" />
+          </div>
+                                      <div class="form-group">
+            <label for="socialinputinsta">Yeni Şifre Tekrar</label>
+              <input type="text" id="socialinputinsta" placeholder="Default" class="form-control" />
+          </div>
+                                <div class="modal-footer">
+                          <button type="button" class="btn btn-sm btn-secondary">Şifremi Değiştir</button>
+                      </div>
+      </div>
+
+      
+      </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
