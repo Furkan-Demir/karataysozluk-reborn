@@ -74,7 +74,7 @@ def UserVarmi(nick):
     im = veritabani.cursor()
     im.execute("""SELECT * FROM users WHERE user_nick = ?""",(nick,))
     verilerx = im.fetchall()
-    print(verilerx)
+    print("verilerx : ",verilerx)
     if len(verilerx) == 0:
         return True
     else:
@@ -88,6 +88,16 @@ def Ara(yer,sorgu): ## injection fixlenicek
     im.execute("SELECT * FROM " + yer + " WHERE " + sorgu)
     veriler = im.fetchall()
     return veriler
+
+def nick_kontrol(nick):
+    liste = ["'","!","^","+","#","$","½","%","&","/","{","(","[",")","]","=","}","?","*","-","_",'"',".",",","ı","ğ","ü","ç","ö"]
+    for i in liste:
+        if nick.find(i) != -1:
+            print(nick,i)
+            return False
+    
+    return True
+
 
 VeritabaniKur()
 

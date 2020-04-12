@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request, redirect, url_for, session ,Blueprint
-from controller import Ara, VeritabaniEkle, UserVarmi
+from controller import Ara, VeritabaniEkle, UserVarmi, nick_kontrol
 
 auth = Blueprint('auth', __name__)
 
@@ -8,15 +8,16 @@ def login():
     if request.method == 'POST':
         nick = request.form['nick']
         password = request.form['password']
+        nick = nick.lower()
         print(nick,password)
         sorgum = "user_nick = " +"'"+nick +"'"+" AND user_password = " + "'"+ password + "'"
         user = Ara("users",sorgum)
+        print(user)
         if user:
-            if user["password"] == password:
-                session['nick'] = user['nick']
-                session['email'] = user['email']
-                session['name'] = user['name']
-                session['id'] = user['id']
+            if user[0][2] == password:
+                session['nick'] =  user[0][1]
+                session['email'] = user[0][4]
+                session['id'] = user[0][0]
                 return redirect(url_for('sozluk.sozlukanasayfa'))
             else:
                 bildirim = "Kullanıcı adı veya Şifre yanlış"
@@ -37,8 +38,11 @@ def register():
             nick = request.form['nick']
             email = request.form['email']
             password = request.form['password']
+            nick = nick.lower()
+            print("request form= ", request.form)
             bilgim = UserVarmi(nick)
-            if bilgim == True:
+            if bilgim == True and nick_kontrol(nick) == True:
+                
                 if len(nick) < 2:
                     return render_template("kayit.html", hata = "Kullanıcı Adınız 2 Karakterden Fazla Olmalıdır")
                 else:
@@ -47,4 +51,11 @@ def register():
                     VeritabaniEkle(yer,veri)
                     return redirect(url_for('auth.login'))
             else:
-                return render_template("kayit.html", hata = "Kullanıcı Adı kullanılıyor.")
+                return render_template("kayit.html", hata = "Kullanıcı Adı kullanılıyor veya özel karakter içeriyor.")
+
+
+
+@auth.route('/cikis')
+def logout():
+    session.clear()
+    return redirect(url_for('auth.login'))
