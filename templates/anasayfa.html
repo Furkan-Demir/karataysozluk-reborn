@@ -90,29 +90,32 @@
         <div class="col-md-6 col-sm-12"><h2 class="text-center" style="padding-top: 20px; padding-bottom: 15px;">Duvar</h2>
             <div class="row">
             <div class="col-12">
-                <form>
-                    <textarea type="text" class="form-control" rows="3" placeholder="Herkese Açık Duvar'a Sende Yaz! (Onaydan sonra görüntülenir.)"></textarea>
+                <form action="/" method="POST">
+                    <textarea type="text" class="form-control" rows="3" id="duvaryazi" name="duvaryazi" placeholder="Herkese Açık Duvar'a Sende Yaz! (Onaydan sonra görüntülenir.)"></textarea>
                     <button class="btn btn-icon btn-primary float-right" style="margin-top:5px; margin-bottom: 15px; " type="submit">
     <span class="btn-inner-text">Gönder</span>
     <span class="btn-inner-icon"><i class="fas fa-play"></i></span>
 </button>
                 </form>
             </div>
-                <!-- card -->
+            
+                
+            
+                <!-- card -->{% for duvar_postlar in duvar_postlar %}
                 <div class="col-12">
                 <div class="card shadow-sm border-light">
                     <div class="row" style="padding:5px;">
                         <div class="col-2  text-center"><img src="https://via.placeholder.com/100" class="img-thumbnail" style="border-radius: 50%;">
                         </div>
                         <div class="col-10">
-                <b style="padding-top: 1px; margin-left: -20px;">@Fxdemir</b>
-                <p style="margin-left: -20px; padding-top: 3px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quis dolor libero. Aliquam nulla erat, fermentum eu pellentesque ut, tempus non tellus. Praesent id placerat tortor. Ut enim lacus, consectetur eget mattis sed, condimentum sed orci massa nunc.</p>
-                <footer class="blockquote-footer text-right" style="margin-top: -15px;"><cite title="Source Title">24.03.2020 11:32</cite></footer>
+                <b style="padding-top: 1px; margin-left: -20px;">@{{ duvar_postlar[7] }}</b>
+                <p style="margin-left: -20px; padding-top: 3px;">{{duvar_postlar[2]}}</p>
+                <footer class="blockquote-footer text-right" ><cite title="Source Title">{{duvar_postlar[4]}}</cite></footer>
                         </div>
                     </div> 
                 </div><br>
             </div>
-                <!-- card -->
+            {% endfor %}<!-- card -->
 
         </div> </div>
 
