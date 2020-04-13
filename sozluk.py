@@ -40,3 +40,6 @@ def sozlukanasayfa():
         return redirect(url_for("sozluk.sozlukanasayfa"))
 
 
+@sozluk.route("/sozluk")
+def sozlukhome():
+    return render_template("sozluk.html")
