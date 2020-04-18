@@ -64,7 +64,7 @@ def VeritabaniEkle(yer,bilgi):## injection fixlenicek
     ## bilgi = ("test","userpass","useremail")
     
     _cursor = veritabani.cursor()
-    _cursor.execute("""INSERT INTO %s VALUES %s""" % (yer,bilgi))
+    _cursor.execute("INSERT INTO "+ yer +" VALUES "+ str(bilgi))
     veritabani.commit()
     
 
@@ -73,12 +73,42 @@ def UserVarmi(nick):
     ## injection fixlenicek
     im = veritabani.cursor()
     im.execute("""SELECT * FROM users WHERE user_nick = ?""",(nick,))
-    verilerx = im.fetchall()
+    verilerx = im.fetchone()
     print("verilerx : ",verilerx)
-    if len(verilerx) == 0:
+    if verilerx == None:
         return True
     else:
         return False
+
+def baslikvarmi(nick):
+    ## injection fixlenicek
+    im = veritabani.cursor()
+    im.execute("""SELECT * FROM baslik WHERE baslik_name = ?""",(nick,))
+    verilerx = im.fetchone()
+    print("verilerx : ",verilerx)
+    if verilerx == None:
+        return True
+    else:
+        return False
+
+
+def Ara_detayli(cekilecek,yer,sorgu): ## injection fixlenicek
+    ## yer = users
+    ## sql_yeri = user_nick
+    ## sorgu = nick
+    im = veritabani.cursor()
+    im.execute("SELECT "+ cekilecek +" FROM " + yer + " WHERE " + sorgu)
+    veriler = im.fetchall()
+    return veriler
+
+def Basliklar(yer,sorgu): ## injection fixlenicek
+    ## yer = users
+    ## sql_yeri = user_nick
+    ## sorgu = nick
+    im = veritabani.cursor()
+    im.execute("SELECT baslik_link_name,baslik_name,baslik_puan FROM " + yer + " ORDER BY " + sorgu)
+    veriler = im.fetchall()
+    return veriler
 
 def Ara(yer,sorgu): ## injection fixlenicek
     ## yer = users
@@ -87,6 +117,15 @@ def Ara(yer,sorgu): ## injection fixlenicek
     im = veritabani.cursor()
     im.execute("SELECT * FROM " + yer + " WHERE " + sorgu)
     veriler = im.fetchall()
+    return veriler
+
+def Aratek(yer,sorgu): ## injection fixlenicek
+    ## yer = users
+    ## sql_yeri = user_nick
+    ## sorgu = nick
+    im = veritabani.cursor()
+    im.execute("SELECT * FROM " + yer + " WHERE " + sorgu)
+    veriler = im.fetchone()
     return veriler
 
 def nick_kontrol(nick):
@@ -100,4 +139,3 @@ def nick_kontrol(nick):
 
 
 VeritabaniKur()
-

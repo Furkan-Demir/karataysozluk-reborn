@@ -1,0 +1,26 @@
+{% extends "core.html" %}
+{% block title %}Başlık Aç{% endblock %}
+
+{% block content %}
+<div class="container "><br>
+    <div class="card shadow p-3 mb-5 bg-white rounded">
+        <div class="row">
+{% if hata %}
+<p>{{hata}}</p>
+{% endif %}
+            <div class="col-12">
+                <form action="/baslik/yeni" method="POST">
+                    <input type="text" class="form-control" id="baslik" name="baslik" placeholder="Başlık" /><br>
+                    <textarea type="text" class="form-control" rows="4" id="ilkentry" name="ilkentry" placeholder="Entry"></textarea>
+                    <br>
+                    <button class="btn btn-block btn-primary float-right" type="submit">
+                    <span class="btn-inner-text">Başlığı Aç</span>
+                    </button>
+                </form>    
+            </div>
+
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

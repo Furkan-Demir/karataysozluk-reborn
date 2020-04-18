@@ -22,68 +22,24 @@
 </div>
                     <div class="overflow-auto" style=" border: 1px solid #ccc; height: 650px;
                       overflow: scroll;">
-<div class="tab-content" id="tabcontentexample">
+                        <div class="tab-content" id="tabcontentexample">
                       
                                 
-            <div class="tab-pane fade show active" id="link-example-1" role="tabpanel"
-                aria-labelledby="tab-link-example-1">
-                      <li class="list-group-item">25 gündem</li>
-                      <li class="list-group-item">Dapibus ac facilisis in</li>
-                      <li class="list-group-item">Morbi leo risus</li>
-                      <li class="list-group-item">Porta ac consectetur ac</li>
-                      <li class="list-group-item">Vestibulum at eros</li>
-                        <li class="list-group-item">Cras justo odio</li>
-                      <li class="list-group-item">Dapibus ac facilisis in</li>
-                      <li class="list-group-item">Morbi leo risus</li>
-                      <li class="list-group-item">Porta ac consectetur ac</li>
-                      <li class="list-group-item">Vestibulum at eros</li>
-                        <li class="list-group-item">Cras justo odio</li>
-                      <li class="list-group-item">Dapibus ac facilisis in</li>
-                      <li class="list-group-item">Morbi leo risus</li>
-                      <li class="list-group-item">Porta ac consectetur ac</li>
-                      <li class="list-group-item">Vestibulum at eros</li>
-                        <li class="list-group-item">Cras justo odio</li>
-                      <li class="list-group-item">Dapibus ac facilisis in</li>
-                      <li class="list-group-item">Morbi leo risus</li>
-                      <li class="list-group-item">Porta ac consectetur ac</li>
-                      <li class="list-group-item">Vestibulum at eros</li>
-                        <li class="list-group-item">Cras justo odio</li>
-                      <li class="list-group-item">Dapibus ac facilisis in</li>
-                      <li class="list-group-item">Morbi leo risus</li>
-                      <li class="list-group-item">Porta ac consectetur ac</li>
-                      <li class="list-group-item">Vestibulum at eros</li>
-                  </div>
+                    <div class="tab-pane fade show active" id="link-example-1" role="tabpanel"
+                        aria-labelledby="tab-link-example-1">
+                        {% for gundem in gundem %}
+                          <a href="/baslik/{{gundem[0]}}"><li class="list-group-item">{{gundem[1]}}</li></a>
+                        {% endfor %}
+                    </div>
 
-<div class="tab-pane fade" id="link-example-2" role="tabpanel" aria-labelledby="tab-link-example-2">
-                      <li class="list-group-item">25 yeni</li>
-                      <li class="list-group-item">Dapibus ac facilisis in</li>
-                      <li class="list-group-item">Morbi leo risus</li>
-                      <li class="list-group-item">Porta ac consectetur ac</li>
-                      <li class="list-group-item">Vestibulum at eros</li>
-                        <li class="list-group-item">Cras justo odio</li>
-                      <li class="list-group-item">Dapibus ac facilisis in</li>
-                      <li class="list-group-item">Morbi leo risus</li>
-                      <li class="list-group-item">Porta ac consectetur ac</li>
-                      <li class="list-group-item">Vestibulum at eros</li>
-                        <li class="list-group-item">Cras justo odio</li>
-                      <li class="list-group-item">Dapibus ac facilisis in</li>
-                      <li class="list-group-item">Morbi leo risus</li>
-                      <li class="list-group-item">Porta ac consectetur ac</li>
-                      <li class="list-group-item">Vestibulum at eros</li>
-                        <li class="list-group-item">Cras justo odio</li>
-                      <li class="list-group-item">Dapibus ac facilisis in</li>
-                      <li class="list-group-item">Morbi leo risus</li>
-                      <li class="list-group-item">Porta ac consectetur ac</li>
-                      <li class="list-group-item">Vestibulum at eros</li>
-                        <li class="list-group-item">Cras justo odio</li>
-                      <li class="list-group-item">Dapibus ac facilisis in</li>
-                      <li class="list-group-item">Morbi leo risus</li>
-                      <li class="list-group-item">Porta ac consectetur ac</li>
-                      <li class="list-group-item">Vestibulum at eros</li>
-                  </div>
+                    <div class="tab-pane fade" id="link-example-2" role="tabpanel" aria-labelledby="tab-link-example-2">
+                      {% for yeni in yeni %}
+                        <a href="/baslik/{{yeni[0]}}"><li class="list-group-item">{{yeni[1]}}</li></a>
+                      {% endfor %}
+                    </div>
 
               </div>
-                    </ul>
+                    
                         </div>
 
         </div>

@@ -1,0 +1,66 @@
+{% extends "core.html" %}
+{% block title %}Anasayfa{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="card">
+        <div class="row">
+        
+            <div class="col-12">
+                <h3 class="text-center">{{baslik_name}}</h3>
+
+                <div class="card shadow-sm border-light">
+                    <div class="row" style="padding:5px;">
+
+                        {% for i in entryler %}
+                       
+                        <div class="d-none d-md-block col-12 ">
+                           <div class="row ">
+                            <div class="col-md-2 text-center">
+                                <img src="https://via.placeholder.com/100" class="img-thumbnail" style="border-radius: 50%; margin-left: -30px;">
+                            </div>
+                            <div class="col-md-10">
+                                <b style="padding-top: 1px; margin-left: -40px;">@{{i[3]}}</b>
+                                <p style="margin-left: -40px;">{{i[0]}}</p>
+                                <footer class="blockquote-footer text-right" ><cite title="Source Title">{{i[1]}}</cite></footer><hr>
+                            </div>
+                        </div>
+                        </div>
+
+                        <div class="col-sm-12 d-sm-none">
+                            <div class="card shadow p-3 mb-5 bg-white rounded">
+                            <b>@{{i[3]}}</b>
+                            <p>{{i[0]}}</p>
+                            <footer class="blockquote-footer text-right" ><cite title="Source Title">{{i[1]}}</cite></footer><br>
+                            </div>
+                        </div>
+                    
+                        {% endfor %}
+                    </div> 
+                </div><br>
+            </div>
+
+            <div class="col-12">
+                <form action="/baslik/{{idim}}" method="POST">
+                    <textarea type="text" class="form-control" rows="3" id="entrygir" name="entrygir" placeholder="Entry Giriniz"></textarea>
+                    <button class="btn btn-icon btn-primary float-right" style="margin-top:5px; margin-bottom: 15px; " type="submit">
+                    <span class="btn-inner-text">Gönder</span>
+                    <span class="btn-inner-icon"><i class="fas fa-play"></i></span>
+                    </button>
+                </form>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+{% endblock %}
