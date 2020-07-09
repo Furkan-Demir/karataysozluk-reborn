@@ -13,6 +13,10 @@ pip install sqlite3
 
 ## Güncelleme Notları
 
+V1.0.4
+- Yeni bir başlık açmada hatalı değişken düzeltildi (bi ara bozmuşum lol).
+- Navbar rengi değiştirildi.
+
 V1.0.3
 - "/sozluk" view'ı yapıldı.
 - Core html sayfasındaki hatalı .js referansı düzeltildi.

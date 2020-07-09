@@ -76,7 +76,7 @@ def UserVarmi(nick):
     ## injection fixlenicek
     with veritabani:
         im = veritabani.cursor()
-        im.execute("""SELECT * FROM users WHERE user_nick = ?""",(nick,))
+        im.execute("""SELECT user_nick FROM users WHERE user_nick = ?""",(nick,))
         verilerx = im.fetchone()
         print("verilerx : ",verilerx)
         if verilerx == None:

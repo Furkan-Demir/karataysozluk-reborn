@@ -65,7 +65,7 @@ def yenibaslikac():
             veri2 = (session['id'],ilkentry,baslik_tarih,"0",verilerim[0],)
             VeritabaniEkle(yer2,veri2)
 
-            return redirect(url_for("sozluk.baslik_idli",id = verilerim[3]))
+            return redirect(url_for("sozluk.baslik_idli",idim = verilerim[3]))
         return render_template("baslikac.html")
 
 
